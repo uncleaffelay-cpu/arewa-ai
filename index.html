@@ -1,2 +1,83 @@
-# arewa-ai
-AI-powered community support assistant for Northern Nigeria.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arewa AI</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f2;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+}
+h1 { color: #087443; }
+p { color: #444; line-height: 1.5; }
+button {
+  background: #087443;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+}
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+#answer {
+  background: #eef8f1;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🌍 Arewa AI</h1>
+<h3>Your Smart Community Assistant</h3>
+<p>Get helpful guidance on education, jobs, agriculture and community development.</p>
+
+<input id="question" placeholder="Ask Arewa AI a question...">
+
+<br>
+<button onclick="askAI()">Ask Arewa AI</button>
+
+<div id="answer">
+<p>Welcome! How can I help you today?</p>
+</div>
+</div>
+
+<script>
+function askAI() {
+  let q = document.getElementById("question").value.toLowerCase();
+  let answer = "Thank you for your question. Arewa AI is being developed to provide helpful information to Northern Nigerian communities.";
+
+  if (q.includes("job") || q.includes("work")) {
+    answer = "To find a job, prepare a good CV, develop useful skills, and apply through trusted organisations and job platforms.";
+  } else if (q.includes("school") || q.includes("scholarship") || q.includes("education")) {
+    answer = "For educational opportunities, check scholarship programmes, prepare your documents, and apply before the deadline.";
+  } else if (q.includes("farm") || q.includes("poultry") || q.includes("chicken")) {
+    answer = "For successful poultry farming, provide clean water, balanced feed, proper vaccination and good hygiene.";
+  } else if (q.includes("business")) {
+    answer = "Start by identifying a community need, planning your costs, and developing a sustainable business model.";
+  }
+
+  document.getElementById("answer").innerHTML = "<p>" + answer + "</p>";
+}
+</script>
+</body>
+</html>
